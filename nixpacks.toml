@@ -1,0 +1,21 @@
+[providers]
+  php = "8.2"
+  node = "18"
+
+[phases.setup]
+  cmds = [
+    "npm install -g npm@latest"
+  ]
+
+[phases.install]
+  cmds = [
+    "composer install --no-dev --optimize-autoloader",
+    "cd task-manager-frontend && npm install"
+  ]
+
+[phases.build]
+  cmds = [
+    "php artisan config:cache",
+    "php artisan route:cache",
+    "cd task-manager-frontend && npm run build"
+  ]
