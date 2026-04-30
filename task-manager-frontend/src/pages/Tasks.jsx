@@ -44,7 +44,7 @@ export default function Tasks() {
             <select
               value={filters.project_id}
               onChange={(e) => setFilters({ ...filters, project_id: e.target.value })}
-              className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-500"
             >
               <option value="">All Projects</option>
               {projects.map((p) => (
@@ -59,7 +59,7 @@ export default function Tasks() {
             <select
               value={filters.status}
               onChange={(e) => setFilters({ ...filters, status: e.target.value })}
-              className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-500"
             >
               <option value="">All Status</option>
               <option value="pending">⏳ Pending</option>
@@ -114,7 +114,7 @@ export default function Tasks() {
                       <select
                         value={task.status}
                         onChange={(e) => updateStatus(task.id, e.target.value)}
-                        className="text-sm border border-gray-200 rounded-lg px-3 py-1.5 focus:ring-2 focus:ring-indigo-500"
+                        className="text-sm border border-gray-200 rounded-lg px-3 py-1.5 focus:ring-2 focus:ring-brand-500"
                         disabled={user.role !== 'admin' && task.assigned_to !== user.id}
                       >
                         <option value="pending">⏳ Pending</option>

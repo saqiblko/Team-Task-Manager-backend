@@ -58,7 +58,7 @@ export default function Projects() {
         {user?.role === 'admin' && (
           <button
             onClick={() => setShowAdd(!showAdd)}
-            className="inline-flex items-center px-5 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl shadow-md hover:shadow-lg transition"
+            className="inline-flex items-center px-5 py-3 bg-brand-600 hover:bg-brand-700 text-white font-medium rounded-xl shadow-md hover:shadow-lg transition"
           >
             <span className="text-xl mr-2">＋</span> New Project
           </button>
@@ -69,7 +69,7 @@ export default function Projects() {
       {showAdd && (
         <form
           onSubmit={addProject}
-          className="bg-white rounded-2xl shadow-md p-6 mb-8 space-y-4 border border-indigo-100 animate-fade-in"
+          className="bg-white rounded-2xl shadow-md p-6 mb-8 space-y-4 border border-brand-100 animate-fade-in"
         >
           <h3 className="text-lg font-semibold text-gray-800">Create New Project</h3>
           <input
@@ -77,20 +77,20 @@ export default function Projects() {
             placeholder="Project name"
             value={form.name}
             onChange={(e) => setForm({ ...form, name: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-500 focus:border-brand-500"
             required
           />
           <textarea
             placeholder="Project description (optional)"
             value={form.description}
             onChange={(e) => setForm({ ...form, description: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-500 focus:border-brand-500"
             rows="2"
           />
           <div className="flex space-x-3">
             <button
               type="submit"
-              className="px-6 py-2.5 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition font-medium"
+              className="px-6 py-2.5 bg-brand-600 text-white rounded-xl hover:bg-brand-700 transition font-medium"
             >
               Create Project
             </button>
@@ -112,10 +112,10 @@ export default function Projects() {
             key={project.id}
             className="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden group"
           >
-            <div className="bg-gradient-to-r from-indigo-500 to-blue-500 h-2"></div>
+            <div className="bg-gradient-to-r from-brand-500 to-brand-400 h-2"></div>
             <div className="p-5">
               <Link to={`/projects/${project.id}`}>
-                <h2 className="text-xl font-bold text-gray-800 group-hover:text-indigo-600 transition mb-1">
+                <h2 className="text-xl font-bold text-gray-800 group-hover:text-brand-600 transition mb-1">
                   {project.name}
                 </h2>
               </Link>
@@ -156,7 +156,7 @@ export default function Projects() {
               placeholder="user@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl mb-4 focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-4 py-3 border border-gray-200 rounded-xl mb-4 focus:ring-2 focus:ring-brand-500"
             />
             <div className="flex space-x-3 justify-end">
               <button
@@ -168,7 +168,7 @@ export default function Projects() {
               <button
                 onClick={addMember}
                 disabled={loadingMember || !email}
-                className="px-5 py-2 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white rounded-xl transition font-medium flex items-center space-x-2"
+                className="px-5 py-2 bg-brand-600 hover:bg-brand-700 disabled:opacity-50 text-white rounded-xl transition font-medium flex items-center space-x-2"
               >
                 {loadingMember ? (
                   <>

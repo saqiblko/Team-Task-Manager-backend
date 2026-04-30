@@ -14,7 +14,7 @@ export default function Dashboard() {
   if (!data)
     return (
       <div className="text-center py-20">
-        <div className="animate-spin w-10 h-10 border-4 border-indigo-600 border-t-transparent rounded-full mx-auto mb-4"></div>
+        <div className="animate-spin w-10 h-10 border-4 border-brand-600 border-t-transparent rounded-full mx-auto mb-4"></div>
         <p className="text-gray-500">Loading dashboard...</p>
       </div>
     );
@@ -22,7 +22,7 @@ export default function Dashboard() {
   const { total_tasks, status_summary, overdue_tasks } = data;
 
   const stats = [
-    { label: 'Total Tasks', value: total_tasks, icon: '📌', color: 'bg-indigo-100 text-indigo-700' },
+    { label: 'Total Tasks', value: total_tasks, icon: '📌', color: 'bg-brand-100 text-brand-700' },
     { label: 'Pending', value: status_summary.pending, icon: '⏳', color: 'bg-amber-100 text-amber-700' },
     { label: 'In Progress', value: status_summary.in_progress, icon: '🔄', color: 'bg-purple-100 text-purple-700' },
     { label: 'Completed', value: status_summary.completed, icon: '✅', color: 'bg-green-100 text-green-700' },

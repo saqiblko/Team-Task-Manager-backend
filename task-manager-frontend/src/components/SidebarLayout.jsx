@@ -25,7 +25,7 @@ export default function SidebarLayout({ children }) {
         {/* Branding */}
         <div className="h-16 flex items-center px-6 border-b border-gray-100">
           <span className="text-2xl mr-2">📋</span>
-          <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-600">
+          <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-brand-600">
             TaskFlow
           </span>
         </div>
@@ -40,8 +40,8 @@ export default function SidebarLayout({ children }) {
                 to={item.path}
                 className={`flex items-center px-4 py-3 rounded-xl transition duration-200 ${
                   isActive
-                    ? 'bg-indigo-50 text-indigo-700 font-semibold shadow-sm'
-                    : 'text-gray-600 hover:bg-gray-50 hover:text-indigo-600'
+                    ? 'bg-brand-50 text-brand-700 font-semibold shadow-sm'
+                    : 'text-gray-600 hover:bg-gray-50 hover:text-brand-600'
                 }`}
               >
                 <span className="text-xl mr-3">{item.icon}</span>
@@ -54,7 +54,7 @@ export default function SidebarLayout({ children }) {
         {/* User Profile Footer */}
         <div className="p-4 border-t border-gray-100">
           <div className="flex items-center bg-gray-50 p-3 rounded-xl mb-3">
-            <div className="h-10 w-10 rounded-full bg-gradient-to-tr from-indigo-500 to-blue-500 flex items-center justify-center text-white font-bold text-lg shadow-inner">
+            <div className="h-10 w-10 rounded-full bg-gradient-to-tr from-brand-500 to-brand-400 flex items-center justify-center text-white font-bold text-lg shadow-inner">
               {user?.name?.charAt(0).toUpperCase()}
             </div>
             <div className="ml-3 overflow-hidden">

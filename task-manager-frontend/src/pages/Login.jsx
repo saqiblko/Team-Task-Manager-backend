@@ -22,13 +22,13 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-indigo-50 to-blue-100">
+    <div className="min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-brand-50 to-blue-100">
       <div className="max-w-md w-full mx-4">
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-          <div className="bg-gradient-to-r from-indigo-600 to-blue-600 px-6 py-8 text-center">
+          <div className="bg-gradient-to-r from-brand-600 to-brand-600 px-6 py-8 text-center">
             <div className="text-4xl mb-2">📋</div>
             <h2 className="text-3xl font-bold text-white">Welcome Back</h2>
-            <p className="text-indigo-100 mt-1">Sign in to your workspace</p>
+            <p className="text-brand-100 mt-1">Sign in to your workspace</p>
           </div>
           <form onSubmit={handleSubmit} className="p-6 space-y-5">
             {error && (
@@ -44,7 +44,7 @@ export default function Login() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="block w-full px-4 py-3 border border-gray-200 rounded-xl shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                className="block w-full px-4 py-3 border border-gray-200 rounded-xl shadow-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition"
                 placeholder="you@example.com"
                 required
               />
@@ -57,14 +57,14 @@ export default function Login() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="block w-full px-4 py-3 border border-gray-200 rounded-xl shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                className="block w-full px-4 py-3 border border-gray-200 rounded-xl shadow-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition"
                 placeholder="••••••••"
                 required
               />
             </div>
             <button
               type="submit"
-              className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-xl transition shadow-md hover:shadow-lg"
+              className="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3 px-4 rounded-xl transition shadow-md hover:shadow-lg"
             >
               Sign In
             </button>
@@ -72,7 +72,7 @@ export default function Login() {
           <div className="bg-gray-50 px-6 py-4 text-center">
             <p className="text-sm text-gray-600">
               Don't have an account?{' '}
-              <Link to="/register" className="text-indigo-600 font-medium hover:underline">
+              <Link to="/register" className="text-brand-600 font-medium hover:underline">
                 Create free account
               </Link>
             </p>

@@ -56,7 +56,7 @@ export default function ProjectDetail() {
   if (!project)
     return (
       <div className="text-center py-20">
-        <div className="animate-spin w-10 h-10 border-4 border-indigo-600 border-t-transparent rounded-full mx-auto"></div>
+        <div className="animate-spin w-10 h-10 border-4 border-brand-600 border-t-transparent rounded-full mx-auto"></div>
       </div>
     );
 
@@ -64,7 +64,7 @@ export default function ProjectDetail() {
     <div className="max-w-7xl mx-auto">
       {/* Breadcrumb */}
       <nav className="flex items-center space-x-2 text-sm text-gray-500 mb-4">
-        <Link to="/projects" className="hover:text-indigo-600">Projects</Link>
+        <Link to="/projects" className="hover:text-brand-600">Projects</Link>
         <span>/</span>
         <span className="text-gray-900 font-medium">{project.name}</span>
       </nav>
@@ -78,7 +78,7 @@ export default function ProjectDetail() {
           </div>
           <button
             onClick={() => setShowTaskForm(!showTaskForm)}
-            className="flex items-center px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl transition shadow-md"
+            className="flex items-center px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl transition shadow-md"
           >
             <span className="text-lg mr-2">＋</span> Add Task
           </button>
@@ -90,13 +90,13 @@ export default function ProjectDetail() {
             {project.members?.map((member) => (
               <span
                 key={member.id}
-                className="inline-flex items-center px-3 py-1.5 bg-indigo-50 text-indigo-700 rounded-full text-sm font-medium"
+                className="inline-flex items-center px-3 py-1.5 bg-brand-50 text-brand-700 rounded-full text-sm font-medium"
               >
-                <span className="w-5 h-5 bg-indigo-200 rounded-full flex items-center justify-center text-xs mr-2 font-bold">
+                <span className="w-5 h-5 bg-brand-200 rounded-full flex items-center justify-center text-xs mr-2 font-bold">
                   {member.name.charAt(0)}
                 </span>
                 {member.name}
-                <span className="ml-1 text-xs text-indigo-400">
+                <span className="ml-1 text-xs text-brand-400">
                   ({member.pivot?.role_in_project || 'member'})
                 </span>
               </span>
@@ -109,7 +109,7 @@ export default function ProjectDetail() {
       {showTaskForm && (
         <form
           onSubmit={addTask}
-          className="bg-white rounded-2xl shadow-md p-6 mb-8 border border-indigo-100 animate-fade-in space-y-4"
+          className="bg-white rounded-2xl shadow-md p-6 mb-8 border border-brand-100 animate-fade-in space-y-4"
         >
           <h3 className="text-lg font-semibold text-gray-800">New Task</h3>
           <input
@@ -117,14 +117,14 @@ export default function ProjectDetail() {
             placeholder="Task title"
             value={taskForm.title}
             onChange={(e) => setTaskForm({ ...taskForm, title: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500"
+            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-500"
             required
           />
           <textarea
             placeholder="Description"
             value={taskForm.description}
             onChange={(e) => setTaskForm({ ...taskForm, description: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500"
+            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-500"
             rows="2"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -133,7 +133,7 @@ export default function ProjectDetail() {
               <select
                 value={taskForm.assigned_to}
                 onChange={(e) => setTaskForm({ ...taskForm, assigned_to: e.target.value })}
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-500"
               >
                 <option value="">Unassigned</option>
                 {project.members?.map((m) => (
@@ -147,12 +147,12 @@ export default function ProjectDetail() {
                 type="date"
                 value={taskForm.due_date}
                 onChange={(e) => setTaskForm({ ...taskForm, due_date: e.target.value })}
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-500"
               />
             </div>
           </div>
           <div className="flex space-x-3">
-            <button type="submit" className="px-6 py-2.5 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 font-medium transition">
+            <button type="submit" className="px-6 py-2.5 bg-brand-600 text-white rounded-xl hover:bg-brand-700 font-medium transition">
               Create Task
             </button>
             <button
@@ -200,7 +200,7 @@ export default function ProjectDetail() {
                       <select
                         value={task.assigned_to || ''}
                         onChange={(e) => updateTaskAssignment(task.id, e.target.value)}
-                        className="text-sm border border-gray-200 rounded-lg px-2 py-1.5 focus:ring-2 focus:ring-indigo-500 bg-transparent"
+                        className="text-sm border border-gray-200 rounded-lg px-2 py-1.5 focus:ring-2 focus:ring-brand-500 bg-transparent"
                         disabled={user.role !== 'admin'}
                       >
                         <option value="">Unassigned</option>
@@ -223,7 +223,7 @@ export default function ProjectDetail() {
                       <select
                         value={task.status}
                         onChange={(e) => updateTaskStatus(task.id, e.target.value)}
-                        className="text-sm border border-gray-200 rounded-lg px-3 py-1.5 focus:ring-2 focus:ring-indigo-500"
+                        className="text-sm border border-gray-200 rounded-lg px-3 py-1.5 focus:ring-2 focus:ring-brand-500"
                         disabled={user.role !== 'admin' && task.assigned_to !== user.id}
                       >
                         <option value="pending">⏳ Pending</option>
