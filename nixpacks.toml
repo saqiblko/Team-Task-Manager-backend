@@ -17,5 +17,9 @@
   cmds = [
     "php artisan config:cache",
     "php artisan route:cache",
+    "php artisan view:cache",
     "cd task-manager-frontend && npm run build"
   ]
+
+[start]
+cmd = "php artisan serve --host=0.0.0.0 --port=$PORT"
